@@ -6,12 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    
+<ion-content>
+  <ion-list inset no-lines>
     <button ion-item [navPush]="contactoPage" [navParams]=contacto
     *ngFor="let contacto of contactos">
-      {{ contacto.nombre }}
+      <ion-thumbnail item-left>
+        <img src="../../assets/imgs/{{contacto.imagen}}" alt="">
+      </ion-thumbnail>
+       <h2>{{ contacto.nombre }}</h2> 
+       <p>{{ contacto.correo }}</p>
     </button>
   </ion-list>
 </ion-content>
